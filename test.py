@@ -44,6 +44,7 @@ if user_input:
 
     st.session_state.past_user_inputs.append(user_input)
     st.session_state.past_outputs.append(output_string)
+    print(st.session_state.past_outputs.append(output_string))
 
 if st.session_state['past_user_inputs']:
 
