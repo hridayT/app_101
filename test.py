@@ -45,5 +45,7 @@ if user_input:
 if st.session_state['past_user_inputs']:
 
     for i in range(len(st.session_state['past_user_inputs'])-1, -1, -1):
-        message(output_string, key=str(i))
+        if i == len(st.session_state['past_user_inputs']) - 1:
+            message(output_string, key=str(i))
+        # message(output_string, key=str(i))
         message(st.session_state['past_user_inputs'][i], is_user=True, key=str(i) + '_user')
