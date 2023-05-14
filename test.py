@@ -52,4 +52,4 @@ if st.session_state['past_user_inputs']:
         # message(st.session_state['past_outputs'][i], key=str(i))
         # message(st.session_state['past_user_inputs'][i], is_user=True, key=str(i) + '_user')
     message(st.session_state['past_outputs'][-1], key=len(st.session_state.past_user_inputs))
-    message(st.session_state['past_user_inputs'][-1], is_user=True, key=len(st.session_state.past_user_inputs) + '_user')
+    message(st.session_state['past_user_inputs'][-1], is_user=True, key=str(len(st.session_state.past_user_inputs)) + '_user')
