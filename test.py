@@ -44,12 +44,9 @@ if user_input:
 
     st.session_state.past_user_inputs.append(user_input)
     st.session_state.past_outputs.append(output_string)
-    print(st.session_state.past_outputs.append(output_string))
 
 if st.session_state['past_user_inputs']:
 
-    # for i in range(len(st.session_state['past_user_inputs'])-1, -1, -1):
-        # message(st.session_state['past_outputs'][i], key=str(i))
-        # message(st.session_state['past_user_inputs'][i], is_user=True, key=str(i) + '_user')
-    message(st.session_state['past_outputs'][-1], key=len(st.session_state.past_user_inputs))
-    message(st.session_state['past_user_inputs'][-1], is_user=True, key=str(len(st.session_state.past_user_inputs)) + '_user')
+    for i in range(len(st.session_state['past_user_inputs'])):
+        message(st.session_state['past_outputs'][i], key=str(i))
+        message(st.session_state['past_user_inputs'][i], is_user=True, key=str(i) + '_user')
